@@ -8,6 +8,7 @@ export const selectError = (state) => state.contacts.error;
 
 export const selectSearchQuery = (state) => state.filters;
 
+
 export const selectVisibleContacts = createSelector(
   [selectContacts, selectSearchQuery],
   (contacts, filters) => {

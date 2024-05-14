@@ -8,7 +8,7 @@ import { useEffect } from "react";
 import { fetchContacts } from "../../redux/contactsOps";
 import { selectError, selectLoading } from "../../redux/selectors";
 
-import "./App.module.css";
+import css from "./App.module.css";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -21,13 +21,11 @@ export default function App() {
 
   return (
     <Layout>
-      <div>
-        <h1>Phonebook</h1>
-        <ContactForm />
-        <SearchBox />
-        {loading && !error && <b>Request in progress...</b>}
-        <ContactList />
-      </div>
+      <h1 className={css.title}>Phonebook</h1>
+
+      <ContactForm />
+      <SearchBox />
+      {loading && !error ? <b>Loading...</b> : <ContactList />}
     </Layout>
   );
 }

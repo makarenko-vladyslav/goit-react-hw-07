@@ -9,12 +9,15 @@ export default function ContactList() {
 
   return (
     <ul className={css.list}>
-      {contacts &&
+      {contacts.length > 0 ? (
         contacts.map((contact) => (
           <li className={css.listItem} key={contact.id}>
             <Contact contact={contact} />
           </li>
-        ))}
+        ))
+      ) : (
+        <h3>You don`t have any contacts</h3>
+      )}
     </ul>
   );
 }

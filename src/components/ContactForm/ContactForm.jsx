@@ -17,7 +17,7 @@ export default function ContactForm() {
       .required("Phone number is required!")
       .matches(
         /^\d{3}-\d{3}-\d{4}$/,
-        "The phone number should be in the format: 123-456-7890"
+        "The phone number should be like this: 123-456-7890"
       ),
   });
 
