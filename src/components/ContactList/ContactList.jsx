@@ -9,11 +9,12 @@ export default function ContactList() {
 
   return (
     <ul className={css.list}>
-      {contacts.map((contact) => (
-        <li className={css.listItem} key={contact.id}>
-          <Contact contact={contact} />
-        </li>
-      ))}
+      {contacts &&
+        contacts.map((contact) => (
+          <li className={css.listItem} key={contact.id}>
+            <Contact contact={contact} />
+          </li>
+        ))}
     </ul>
   );
 }

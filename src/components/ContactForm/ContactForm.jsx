@@ -24,10 +24,7 @@ export default function ContactForm() {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    actions.preventDefault();
-
     dispatch(addContact(values));
-
     actions.resetForm();
   };
 
