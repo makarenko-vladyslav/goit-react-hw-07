@@ -8,15 +8,12 @@
 
   transition: all 150ms linear;
 
+  &:focus-visible,
   &:hover {
-    background-color: #2e6deb;
+    background-color: #eb2e2e;
+    border: 1px solid #eb2e2e;
     color: #fff;
-  }
-
-  &:focus-visible {
-    outline: 1px solid #2e6deb;
-    background-color: #2e6deb;
-    color: #fff;
+    filter: drop-shadow(4px 4px 6px #0a0a1965);
   }
 }
 
