@@ -2,14 +2,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { setStatusFilter, selectName } from "../../redux/filtersSlice";
 
 import css from "./SearchBox.module.css";
-import { selectContacts, selectVisibleContacts } from "../../redux/selectors";
+import { selectContacts } from "../../redux/selectors";
+import { selectFilteredContacts } from "../../redux/contactsSlice";
 
 export default function SearchBox() {
   const dispatch = useDispatch();
 
   const searchValue = useSelector(selectName);
   const contacts = useSelector(selectContacts);
-  const visibleContacts = useSelector(selectVisibleContacts);
+  const visibleContacts = useSelector(selectFilteredContacts);
 
   return (
     contacts.items.length > 0 &&
