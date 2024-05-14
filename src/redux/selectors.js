@@ -11,7 +11,7 @@ export const selectSearchQuery = (state) => state.filters;
 export const selectVisibleContacts = createSelector(
   [selectContacts, selectSearchQuery],
   (contacts, filters) => {
-    contacts.items.filter((contact) =>
+    return contacts.items.filter((contact) =>
       contact.name.toLowerCase().includes(filters.name.toLowerCase())
     );
   }
