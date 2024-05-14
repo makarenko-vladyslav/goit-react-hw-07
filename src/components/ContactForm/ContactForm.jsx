@@ -1,11 +1,11 @@
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsSlice";
+import { addContact } from "../../redux/contactsOps";
 
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { nanoid } from "@reduxjs/toolkit";
 
 import css from "./ContactForm.module.css";
-import { nanoid } from "@reduxjs/toolkit";
 
 export default function ContactForm() {
   const schema = Yup.object().shape({
@@ -16,8 +16,8 @@ export default function ContactForm() {
     number: Yup.string()
       .required("Phone number is required!")
       .matches(
-        /^\d{3}-\d{2}-\d{2}$/,
-        "The phone number should be in the format: 123-45-67"
+        /^\d{3}-\d{3}-\d{4}$/,
+        "The phone number should be in the format: 123-456-7890"
       ),
   });
 

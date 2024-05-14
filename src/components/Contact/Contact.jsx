@@ -2,7 +2,7 @@ import { IoCall } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
 
 import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contactsSlice";
+import { deleteContact } from "../../redux/contactsOps";
 
 import css from "./Contact.module.css";
 
